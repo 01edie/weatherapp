@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 
 
 const Input = ({ setWeather, setLocation, location, setImage, image, weather }) => {
@@ -10,6 +10,9 @@ const Input = ({ setWeather, setLocation, location, setImage, image, weather }) 
  
 
 
+  // useEffect(()=>{
+  //   fetchWeather();
+  // },[location]);
   function fetchWeather() {
 
     // weather api
