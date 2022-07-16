@@ -1,7 +1,8 @@
 import React,{useEffect} from 'react';
+import loading from './loading.png';
 
 
-const Input = ({ setWeather, setLocation, location, setImage, image, weather }) => {
+const Input = ({ setWeather, setLocation, location, setImage, isLocationSet ,setIsLocationSet, setIsError}) => {
 
 
   const openWeatherMap = `http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=0cb79c67df5904e68ba7f3f53fade759&units=metric`;
@@ -14,7 +15,7 @@ const Input = ({ setWeather, setLocation, location, setImage, image, weather }) 
   //   fetchWeather();
   // },[location]);
   function fetchWeather() {
-
+    setImage(loading);
     // weather api
     fetch(openWeatherMap)
       .then(response => {
@@ -23,12 +24,21 @@ const Input = ({ setWeather, setLocation, location, setImage, image, weather }) 
           return response.json();
         }
         else {
+          setIsLocationSet(false);
+          console.log('reality check');
+          console.log(isLocationSet);
+          setIsError(true);
           return alert('city not found');
         }
       })
       .then(result => {
         console.log(result);
-        setWeather(result);
+        if(result!==undefined){
+          setWeather(result);
+          setIsLocationSet(true);
+          setIsError(false);
+        }
+        console.log('reality mark 2');
       })
 
 
@@ -43,7 +53,7 @@ const Input = ({ setWeather, setLocation, location, setImage, image, weather }) 
         }
       })
       .then(result => {
-        console.log(result);
+        // console.log(result);
         setImage(result?.results[0]?.urls?.raw);
       })
 
@@ -54,6 +64,7 @@ const Input = ({ setWeather, setLocation, location, setImage, image, weather }) 
     <div className='input-container'>
       <input type="text" className='location-input' onChange={(e) => { setLocation(e.target.value) }} placeholder='Enter City' />
       <button type='button' className='btn' onClick={fetchWeather}>Check</button>
+      {/* onClick={fetchWeather} */}
 
     </div>
   )

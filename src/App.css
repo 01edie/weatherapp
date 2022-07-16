@@ -32,11 +32,13 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-.location-input{
+
+.location-input {
   height: 2.5rem;
   width: 20rem;
   border-radius: 0.5rem;
@@ -51,7 +53,8 @@
   font-weight: 600;
 
 }
-.btn{
+
+.btn {
   border: none;
   width: 15rem;
   height: 2.5rem;
@@ -62,32 +65,71 @@
   -o-border-radius: 0.5rem;
   font-size: 1.25rem;
   cursor: pointer;
+  -webkit-box-shadow: 2px 3px 17px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 3px 17px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 3px 17px -4px rgba(0, 0, 0, 0.75);
+
 }
-.input-container{
+
+.btn:hover {
+  background-color: rgb(197, 197, 197);
+  font-size: 1.35rem;
+  background-color: #61dafb;
+}
+
+.btn:active {
+  box-shadow: none;
+
+
+}
+
+.input-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
   align-items: center;
 }
-.heading{
+
+.heading {
   position: absolute;
-  top: 0.25rem;
+  top: 0.1rem;
   left: 50%;
-  transform: translate(-50%,0%);
-  -webkit-transform: translate(-50%,0%);
-  -moz-transform: translate(-50%,0%);
-  -ms-transform: translate(-50%,0%);
-  -o-transform: translate(-50%,0%);
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
 }
 
-.details{
+.details {
   margin-top: 2rem;
-  font-size: 0.85rem;
-  color: blue;
+  font-size: 0.95rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  backdrop-filter: brightness(1.08);
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+
+  -webkit-box-shadow: 0px 6px 70px 8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 6px 70px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 6px 70px 8px rgba(0, 0, 0, 0.75);
 
 }
-.location-image{
+
+.location-text {
+  color: black;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.location-image {
   width: 20rem;
   height: 20rem;
   border-radius: 0.5rem;
@@ -96,6 +138,22 @@
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
 }
-.current-location{
+
+.current-location {
   margin-bottom: 0.5rem;
+  text-align: center;
+
+}
+
+.intro-line {
+  position: absolute;
+  top: 5rem;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+  font-size: 1.5rem;
 }
