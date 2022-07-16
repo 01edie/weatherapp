@@ -5,7 +5,7 @@ import loading from './loading.png';
 const Input = ({ setWeather, setLocation, location, setImage, isLocationSet ,setIsLocationSet, setIsError}) => {
 
 
-  const openWeatherMap = `http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=0cb79c67df5904e68ba7f3f53fade759&units=metric`;
+  const openWeatherMap = `https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=0cb79c67df5904e68ba7f3f53fade759&units=metric`;
 
   const unSplash = `https://api.unsplash.com/search/photos?query=${location}&client_id=hh7U9JN2SgyK4qFzSxktF7Jl1IKXrJRlA2ZEEUCXUnY`;
  
